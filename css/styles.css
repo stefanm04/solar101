@@ -11549,7 +11549,7 @@ header.masthead .masthead-heading {
   align-items: center;
 }
 
-.timeline:before {
+/* .timeline:before {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -11558,7 +11558,7 @@ header.masthead .masthead-heading {
   margin-left: 1.5px;
   content: "";
   background-color: #e9ecef;
-}
+} */
 
 .timeline > li {
   position: relative;
