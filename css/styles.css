@@ -11453,6 +11453,136 @@ header.masthead .masthead-heading {
     margin-bottom: 4rem;
   }
 }
+
+.thesun-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.thesun-hero div {
+  flex: 1;
+}
+
+.thesun-hero img {
+  max-width: 400px;
+  flex-shrink: 0;
+}
+
+.fun-facts-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.fun-facts-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.fun-facts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fun-fact {
+  flex: 1 1 calc(33.33% - 20px);
+  min-width: 280px;
+  max-width: 350px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fun-fact h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.fun-fact p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.fun-fact:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.sun-interactive-section {
+  text-align: center;
+  padding: 40px 20px;
+  margin-bottom: 50px;
+}
+
+.iframe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 90%; /* Limits the width on large screens */
+  height: auto;
+}
+
+.sun-interactive {
+  width: 100%;
+  max-width: 800px; /* Larger size for better visibility */
+  height: 600px;    /* Increased height for better visibility */
+  border: none;     /* Optional: Remove border for a cleaner look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
+  border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+
+.gallery-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9; /* Optional: Add a subtle background */
+}
+
+.gallery-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Ensures it adjusts for smaller screens */
+}
+
+.gallery-item {
+  max-width: 300px;
+  text-align: center;
+}
+
+.gallery-item img {
+  width: 100%;
+  border-radius: 10px; /* Optional: Add rounded corners to images */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for depth */
+}
+
+.gallery-item p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
 #portfolio .portfolio-item {
   max-width: 26rem;
   margin-left: auto;
