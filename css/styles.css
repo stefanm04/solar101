@@ -11475,6 +11475,10 @@ header.masthead .masthead-heading {
   animation: rotateSun 60s linear infinite;
 }
 
+.thesun-section {
+  padding: 100px 0px 100px 0px;
+}
+
 @keyframes rotateSun {
   0% {
     transform: rotate(0deg);
@@ -11487,7 +11491,7 @@ header.masthead .masthead-heading {
 .fun-facts-section {
   text-align: center;
   padding: 50px 20px;
-  background-color: #415566;
+  background-color: #23708c;
 }
 
 .fun-facts-section h2 {
@@ -11530,7 +11534,7 @@ header.masthead .masthead-heading {
 .sun-interactive-section {
   text-align: center;
   padding: 40px 20px;
-  margin-bottom: 50px;
+  margin: 50px 0px 50px 0px;
 }
 
 .iframe-container {
