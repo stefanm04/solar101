@@ -11739,6 +11739,49 @@ header.masthead .masthead-heading {
   font-size: 1.2rem;
 }
 
+/* Temp */
+.starship-container {
+    display: flex;
+    align-items: flex-start;
+    max-width: 1200px;
+    padding: 20px;
+}
+.starship-text-content {
+    max-width: 600px;
+    margin-right: 20px;
+}
+.starship-text-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+.starship-text-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.starship-details {
+    font-size: 1em;
+}
+.starship-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.starship-details table td {
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+}
+.starship-details table td:first-child {
+    font-weight: bold;
+}
+.starship-rocket-image {
+    flex-shrink: 0;
+}
+.starship-rocket-image img {
+    max-height: 500px;
+    width: auto;
+}
+
 /* Footer */
 footer {
   text-align: center;
@@ -11792,14 +11835,21 @@ footer {
 }
 
 .portfolio-modal .modal-dialog {
-  margin: 1rem;
-  max-width: 100vw;
+  margin: 1rem; /* Add spacing around modal */
+  max-width: calc(100vw - 2rem); /* Reduce width slightly */
+  height: calc(100vh - 2rem); /* Reduce height slightly */
 }
+
 .portfolio-modal .modal-content {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding: 2rem; /* Reduce padding */
+  height: 100%; /* Full height */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
   text-align: center;
 }
+
 .portfolio-modal .modal-content h2, .portfolio-modal .modal-content .h2 {
   font-size: 3rem;
   line-height: 3rem;
@@ -11817,18 +11867,28 @@ footer {
 }
 .portfolio-modal .modal-content img {
   margin-bottom: 2rem;
+  max-height: 80vh; /* Prevent image overflow */
+  width: auto; /* Maintain aspect ratio */
+  animation: rotateImage 10s linear infinite; /* Apply rotation */
 }
 .portfolio-modal .close-modal {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  width: 3rem;
-  height: 3rem;
-  cursor: pointer;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1050; /* Ensure it's above other content */
   background-color: transparent;
 }
 .portfolio-modal .close-modal:hover {
-  opacity: 0.3;
+  opacity: 0.3; /* Add hover effect */
+}
+
+@keyframes rotateImage {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .timeline {
