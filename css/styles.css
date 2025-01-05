@@ -682,6 +682,7 @@ progress {
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
+  margin-bottom: 1.5rem;
 }
 
 .col {
@@ -965,6 +966,7 @@ progress {
   .col-sm-6 {
     flex: 0 0 auto;
     width: 50%;
+    margin-bottom: 1.5rem;
   }
 
   .col-sm-7 {
@@ -1381,6 +1383,7 @@ progress {
   .col-lg-4 {
     flex: 0 0 auto;
     width: 33.33333333%;
+    margin-bottom: 1.5rem;
   }
 
   .col-lg-5 {
@@ -7370,10 +7373,10 @@ textarea.form-control-lg {
 .mb-3 {
   margin-bottom: 1rem !important;
 }
-
+/* 
 .mb-4 {
   margin-bottom: 1.5rem !important;
-}
+} */
 
 .mb-5 {
   margin-bottom: 3rem !important;
@@ -9678,9 +9681,9 @@ textarea.form-control-lg {
     margin-right: auto !important;
   }
 
-  .mb-lg-0 {
+  /* .mb-lg-0 {
     margin-bottom: 0 !important;
-  }
+  } */
 
   .mb-lg-1 {
     margin-bottom: 0.25rem !important;
@@ -11634,7 +11637,7 @@ header.masthead .masthead-heading {
 .missions-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   justify-content: center;
 }
 
@@ -11648,6 +11651,7 @@ header.masthead .masthead-heading {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  height: 400px; /* Set a fixed height for all cards */
 }
 
 .mission-card:hover {
@@ -11662,7 +11666,11 @@ header.masthead .masthead-heading {
 }
 
 .mission-info {
+  display: flex;
+  flex-direction: column;
   padding: 15px;
+  justify-content: space-between;
+  flex-grow: 1; /* Ensure content fills available space */
 }
 
 .mission-duration {
@@ -11695,6 +11703,8 @@ header.masthead .masthead-heading {
 
 .read-more {
   text-decoration: none;
+  margin-top: auto; /* Push Read More to the bottom */
+  align-self: flex-start;
 }
 
 
@@ -11790,46 +11800,76 @@ footer {
   padding: 20px 0px 10px 0px;
 }
 
+/* Change col-lg-4 to col-lg-3 for a 4-item per row layout on larger screens */
+#portfolio .col-lg-3 {
+  width: 25%; /* 100% / 4 items per row */
+  padding: 0 15px; /* Adjust padding if needed */
+}
+
+/* Adjustments for responsiveness */
+@media (max-width: 1200px) {
+  #portfolio .col-lg-3 {
+    width: 33.33333%; /* 3 items per row on medium screens */
+  }
+}
+
+@media (max-width: 992px) {
+  #portfolio .col-sm-6 {
+    width: 50%; /* 2 items per row on small screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #portfolio .col-sm-6 {
+    width: 100%; /* 1 item per row on extra small screens */
+  }
+}
+
 #portfolio .portfolio-item {
   max-width: 26rem;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 5px; /* Add border radius to portfolio items */
-  overflow: hidden; /* Ensure child content doesn't overflow outside the border radius */
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Keeps the caption at the bottom */
+  margin: auto;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative; /* Ensures proper positioning of elements */
 }
 
 #portfolio .portfolio-item .portfolio-link {
-  position: relative;
   display: block;
-  margin: 0 auto;
+  height: 100%;
+  text-decoration: none;
+  position: relative; /* Ensure the link wraps the entire card */
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover {
-  display: flex;
-  position: absolute;
+#portfolio .portfolio-item .portfolio-link img {
   width: 100%;
   height: 100%;
-  background: rgba(255, 200, 0, 0.9);
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity ease-in-out 0.25s;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
-  font-size: 1.25rem;
-  color: white;
-}
-
-#portfolio .portfolio-item .portfolio-link:hover .portfolio-hover {
-  opacity: 1;
+#portfolio .portfolio-item:hover .portfolio-link img {
+  transform: scale(1.1); /* Slight zoom on hover */
 }
 
 #portfolio .portfolio-item .portfolio-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white; /* Fully white background */
   padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  background-color: #fff;
-  border-radius: 5px; /* Add border radius to the caption */
+  border-top: 1px solid #e0e0e0; /* Optional: subtle border at the top of the caption for a cleaner look */
 }
 
 #portfolio .portfolio-item .portfolio-caption .portfolio-caption-heading {
@@ -11843,6 +11883,11 @@ footer {
   font-style: italic;
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+#portfolio .portfolio-item .portfolio-hover {
+  display: none;
+}
+
 
 .portfolio-modal .modal-dialog {
   margin: 1rem; /* Add spacing around modal */
@@ -11924,10 +11969,6 @@ footer {
     transform: rotate(360deg);
   }
 }
-
-
-
-
 
 .timeline {
   position: relative;
